@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   get 'about', to: 'pages#about'
   #To display specific routes for article we can use only option.
   #resource :article_name only: [:resource_attr_name]
-  resources :articles, only: [:show, :index, :new, :create, :edit, :update]
+  #resources :articles, only: [:show, :index, :new, :create, :edit, :update, :destroy]
+  resources :articles
 end
