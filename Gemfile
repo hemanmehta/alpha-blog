@@ -49,6 +49,7 @@ group :test do
 end
 
 group :production do
+  #Use PostgreSQL Database for Prouction on Heroku.
   gem 'pg'
 end
 
