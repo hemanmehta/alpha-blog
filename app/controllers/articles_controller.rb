@@ -29,7 +29,7 @@ class ArticlesController < ApplicationController
         #@article = Article.new(params.require(:TOP_LEVEL_KEY).permit(:KEY1, :KEY2))
         @article = Article.new(params.require(:article).permit(:title, :description))
         # render plain: @article.inspect
-        
+        byebug
         if @article.save
             flash[:notice] = "Article was created Successfully."
             #redirecting page to show article details
