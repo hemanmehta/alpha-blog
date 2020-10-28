@@ -1,26 +1,26 @@
-# README
-Hosting URL: https://alpha-blog-demo.herokuapp.com/
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Resource
 
+    Users - create users table and model - add validations 
+    * username must be present and unique, min 3 max 25 
+    * email address must be present and unique, max 105 
+    * email must be valid email format, check with email regex
 
-Things you may want to cover:
+Associations
 
-* Ruby version
+    One-to-many between users and articles
 
-* System dependencies
+REST for users
 
-* Configuration
+Authentication
 
-* Database creation
+    Login using secure password
 
-* Database initialization
+Restriction of actions
 
-* How to run the test suite
+    Based on logged in/logged out state
 
-* Services (job queues, cache servers, search engines, etc.)
+Security
 
-* Deployment instructions
+    Admin user functionality and access level
 
-* ...
