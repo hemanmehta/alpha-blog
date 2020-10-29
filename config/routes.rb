@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   #resource :article_name only: [:resource_attr_name]
   #resources :articles, only: [:show, :index, :new, :create, :edit, :update, :destroy]
   resources :articles
+  get 'signup', to: 'users#new'
+  resources :users, except: [:new]
 end
