@@ -3,6 +3,8 @@ class ArticlesController < ApplicationController
     #before_action :method_name, only: [:action1, :action2]
     #set_article method will be called for below 4 action prior execution of respective action body part.
     before_action :set_article, only: [:show, :edit, :update, :destroy]
+    before_action :require_user, except: [:show, :index]
+    before_action :require_same_user, only: [:edit, :update, :destroy]
 
     def show
         #Creating instance variable @article to fetch article based on index.
@@ -74,5 +76,12 @@ class ArticlesController < ApplicationController
     #Creating article_params method for update,create actions refactoring
     def article_params
         params.require(:article).permit(:title, :description)
+    end
+
+    def require_same_user
+        if current_user != @article.user
+            flash[:alert] = "You can only edit or delete your own article."
+            redirect_to @article
+        end
     end
 end
