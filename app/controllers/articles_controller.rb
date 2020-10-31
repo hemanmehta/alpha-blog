@@ -75,7 +75,7 @@ class ArticlesController < ApplicationController
 
     #Creating article_params method for update,create actions refactoring
     def article_params
-        params.require(:article).permit(:title, :description)
+        params.require(:article).permit(:title, :description, category_ids: [])
     end
 
     def require_same_user
